@@ -47,8 +47,11 @@ public class CreateBS {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey().equals(AllCreativeModeTabs.BASE_CREATIVE_TAB.getKey())) for (TierMaterials tier : TierMaterials.values())
+        if (event.getTabKey().equals(AllCreativeModeTabs.BASE_CREATIVE_TAB.getKey()))
+            for (TierMaterials tier : TierMaterials.values()) {
+                if (!tier.valid) continue;
                 event.getEntries().putBefore(AllBlocks.ITEM_VAULT.asStack(), BSBlocks.VAULTS.get(tier).asStack(), PARENT_AND_SEARCH_TABS);
+            }
     }
 
     public static ResourceLocation asResource(String path) {
