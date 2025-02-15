@@ -5,7 +5,6 @@ import com.simibubi.create.AllCreativeModeTabs;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.TooltipHelper;
-import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -16,7 +15,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import uwu.lopyluna.create_bs.content.vault.TieredVaultBlock;
+import uwu.lopyluna.create_bs.content.TierMaterials;
 import uwu.lopyluna.create_bs.infrastructure.data.BSDatagen;
 import uwu.lopyluna.create_bs.registry.*;
 
@@ -48,8 +47,8 @@ public class CreateBS {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey().equals(AllCreativeModeTabs.BASE_CREATIVE_TAB.getKey())) for (BlockEntry<TieredVaultBlock> entry : BSBlocks.VAULTS)
-                event.getEntries().putBefore(AllBlocks.ITEM_VAULT.asStack(), entry.asStack(), PARENT_AND_SEARCH_TABS);
+        if (event.getTabKey().equals(AllCreativeModeTabs.BASE_CREATIVE_TAB.getKey())) for (TierMaterials tier : TierMaterials.values())
+                event.getEntries().putBefore(AllBlocks.ITEM_VAULT.asStack(), BSBlocks.VAULTS.get(tier).asStack(), PARENT_AND_SEARCH_TABS);
     }
 
     public static ResourceLocation asResource(String path) {
