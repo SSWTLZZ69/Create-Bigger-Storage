@@ -22,7 +22,7 @@ apply plugin: 'org.spongepowered.mixin'
 jarJar.enable()
 
 group = 'uwu.lopyluna.create_bs'
-archivesBaseName = "Create-Better-Storages-${minecraft_version}"
+archivesBaseName = "Create-Better-Storages-Forge-${minecraft_version}"
 version = mod_version
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -173,7 +173,6 @@ task jarJarRelease {
 
 java {
     withSourcesJar()
-    withJavadocJar()
 }
 
 void addLicense(jarTask) {
