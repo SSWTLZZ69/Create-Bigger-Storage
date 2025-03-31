@@ -1,8 +1,8 @@
 package uwu.lopyluna.create_bs.registry;
 
 import com.simibubi.create.api.connectivity.ConnectivityHandler;
-import com.simibubi.create.content.contraptions.BlockMovementChecks;
-import uwu.lopyluna.create_bs.content.vault.TieredVaultBlock;
+import com.simibubi.create.api.contraption.BlockMovementChecks;
+import uwu.lopyluna.create_bs.content.logistics.vault.TieredVaultBlock;
 
 public class BSMovementChecks {
     public static void register() {

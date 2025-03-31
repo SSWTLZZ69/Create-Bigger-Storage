@@ -1,10 +1,10 @@
-package uwu.lopyluna.create_bs.content.vault;
+package uwu.lopyluna.create_bs.content.logistics.vault;
 
-import com.jozufozu.flywheel.util.transform.TransformStack;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.simibubi.create.foundation.blockEntity.renderer.SmartBlockEntityRenderer;
-import com.simibubi.create.foundation.utility.AnimationTickHolder;
-import com.simibubi.create.foundation.utility.VecHelper;
+import dev.engine_room.flywheel.lib.transform.TransformStack;
+import net.createmod.catnip.animation.AnimationTickHolder;
+import net.createmod.catnip.math.VecHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
@@ -46,8 +46,8 @@ public class SeeThroughVaultRenderer extends SmartBlockEntityRenderer<TieredVaul
         float bob = (float) Math.sin((time + timeOffset) * Math.PI) * 0.05f;
 
         ms.translate(vec.x + 0.5, vec.y + 0.35 + bob, vec.z + 0.5);
-        TransformStack.cast(ms).rotateY(angle);
-        TransformStack.cast(ms).scale(0.75f);
+        TransformStack.of(ms).rotateY(angle);
+        TransformStack.of(ms).scale(0.75f);
         mc.getItemRenderer().renderStatic(stack, ItemDisplayContext.GROUND, light, overlay, ms, buffer, mc.level, 0);
         ms.popPose();
     }

@@ -1,4 +1,4 @@
-package uwu.lopyluna.create_bs.content.vault;
+package uwu.lopyluna.create_bs.content.logistics.vault;
 
 import com.simibubi.create.api.connectivity.ConnectivityHandler;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;

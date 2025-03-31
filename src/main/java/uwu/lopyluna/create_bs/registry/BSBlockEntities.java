@@ -4,8 +4,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import uwu.lopyluna.create_bs.content.TieredBEBlockList;
-import uwu.lopyluna.create_bs.content.vault.SeeThroughVaultRenderer;
-import uwu.lopyluna.create_bs.content.vault.TieredVaultBlockEntity;
+import uwu.lopyluna.create_bs.content.logistics.vault.SeeThroughVaultRenderer;
+import uwu.lopyluna.create_bs.content.logistics.vault.TieredVaultBlockEntity;
 
 import static uwu.lopyluna.create_bs.CreateBS.REGISTRATE;
 

@@ -1,5 +1,6 @@
 package uwu.lopyluna.create_bs.registry;
 
+import com.simibubi.create.AllMountedStorageTypes;
 import com.simibubi.create.foundation.data.AssetLookup;
 import com.simibubi.create.foundation.data.SharedProperties;
 import net.minecraft.client.renderer.RenderType;
@@ -14,10 +15,11 @@ import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import uwu.lopyluna.create_bs.CreateBS;
 import uwu.lopyluna.create_bs.content.TieredBlockList;
-import uwu.lopyluna.create_bs.content.vault.TieredVaultBlock;
-import uwu.lopyluna.create_bs.content.vault.TieredVaultCTBehaviour;
-import uwu.lopyluna.create_bs.content.vault.TieredVaultItem;
+import uwu.lopyluna.create_bs.content.logistics.vault.TieredVaultBlock;
+import uwu.lopyluna.create_bs.content.logistics.vault.TieredVaultCTBehaviour;
+import uwu.lopyluna.create_bs.content.logistics.vault.TieredVaultItem;
 
+import static com.simibubi.create.api.contraption.storage.item.MountedItemStorageType.mountedItemStorage;
 import static com.simibubi.create.foundation.data.CreateRegistrate.connectedTextures;
 import static com.simibubi.create.foundation.data.TagGen.axeOrPickaxe;
 import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
@@ -63,6 +65,7 @@ public class BSBlocks {
                                     .build());
                 })
                 .onRegister(connectedTextures(() -> new TieredVaultCTBehaviour(tier)))
+                .transform(mountedItemStorage(BSMountedStorageTypes.VAULT))
                 .item((b, p) -> new TieredVaultItem(b, p, tier))
                 .build();
         return block.register();
